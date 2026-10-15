@@ -1,0 +1,88 @@
+<section class="panel" aria-labelledby="filters-title">
+  <div class="panel__header">
+    <div class="panel__title">
+      <span class="material-symbols-outlined" aria-hidden="true">tune</span>
+      <h2 id="filters-title">ตัวกรองละเอียด</h2>
+    </div>
+    <button type="button" class="link-button" (click)="reset()">ล้างทั้งหมด</button>
+  </div>
+
+  <app-price-range-filter
+    [minPrice]="filtersForm.minPrice"
+    [maxPrice]="filtersForm.maxPrice"
+    [filters]="filters()"
+    [rooms]="rooms()"
+  />
+
+  <label class="cancellation" for="free-cancellation">
+    <span class="cancellation__dot" aria-hidden="true"></span>
+    <span class="cancellation__text">
+      <span class="group__title">ยกเลิกฟรี (Free Cancellation)</span>
+      <span class="hint">จองล่วงหน้าโดยไม่ต้องกังวล</span>
+    </span>
+    <input id="free-cancellation" type="checkbox" class="checkbox checkbox--lg" [formField]="filtersForm.freeCancellation" />
+  </label>
+
+  <fieldset class="group">
+    <legend class="group__title">ประเภทห้องพัก</legend>
+    <div class="options">
+      @for (option of roomTypeOptions; track option.value) {
+        <label class="option">
+          <span class="option__label">
+            <input
+              type="checkbox"
+              class="checkbox"
+              [checked]="isRoomTypeSelected(option.value)"
+              (change)="toggleRoomType(option.value)"
+            />
+            {{ option.label }}
+          </span>
+          <span class="count">
+            {{ roomTypeCounts()[option.value] }}<span class="visually-hidden"> ห้อง</span>
+          </span>
+        </label>
+      }
+    </div>
+  </fieldset>
+
+  <fieldset class="group">
+    <legend class="group__title">รูปแบบเตียง</legend>
+    <div class="beds">
+      <label class="bed">
+        <input type="radio" name="bed-type" [checked]="filters().bedType === null" (change)="selectBedType(null)" />
+        <span>ทุกแบบ</span>
+      </label>
+      @for (option of bedTypeOptions; track option.value) {
+        <label class="bed">
+          <input
+            type="radio"
+            name="bed-type"
+            [checked]="filters().bedType === option.value"
+            (change)="selectBedType(option.value)"
+          />
+          <span>{{ option.label }}</span>
+        </label>
+      }
+    </div>
+  </fieldset>
+
+  <fieldset class="group">
+    <legend class="group__title">สิ่งอำนวยความสะดวกในห้อง</legend>
+    <div class="chips">
+      @for (option of amenityOptions; track option.value) {
+        <button
+          type="button"
+          class="chip"
+          [class.chip--active]="isAmenitySelected(option.value)"
+          [attr.aria-pressed]="isAmenitySelected(option.value)"
+          (click)="toggleAmenity(option.value)"
+        >
+          <span class="material-symbols-outlined" aria-hidden="true">{{ option.icon }}</span>
+          {{ option.label }}
+        </button>
+      }
+    </div>
+  </fieldset>
+
+  <ng-content />
+</section>

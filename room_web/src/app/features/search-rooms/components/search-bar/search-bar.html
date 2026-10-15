@@ -1,0 +1,121 @@
+@let destinationError = errorOf(searchForm.destinationId);
+@let checkInError = errorOf(searchForm.checkIn);
+@let checkOutError = errorOf(searchForm.checkOut);
+@let adultsError = errorOf(searchForm.adults);
+@let childrenError = errorOf(searchForm.children);
+@let roomsError = errorOf(searchForm.rooms);
+
+<form class="strip" novalidate aria-label="ค้นหาห้องว่าง" (submit)="onSubmit($event)">
+  <div class="field field--destination" [class.field--invalid]="destinationError">
+    <span class="field__icon material-symbols-outlined" aria-hidden="true">location_on</span>
+    <div class="field__body">
+      <label class="field__label" for="destination">จุดหมายปลายทาง / สาขา</label>
+      <select
+        id="destination"
+        class="field__control"
+        [formField]="searchForm.destinationId"
+        [attr.aria-invalid]="destinationError ? 'true' : null"
+        [attr.aria-describedby]="destinationError ? 'destination-error' : null"
+      >
+        @for (destination of destinations; track destination.id) {
+          <option [value]="destination.id">{{ destination.name }}</option>
+        }
+      </select>
+      @if (destinationError) {
+        <p id="destination-error" class="field__error">{{ destinationError }}</p>
+      }
+    </div>
+  </div>
+
+  <div class="field field--dates" [class.field--invalid]="checkInError || checkOutError">
+    <span class="field__icon material-symbols-outlined" aria-hidden="true">calendar_month</span>
+    <fieldset class="field__body">
+      <legend class="field__label">
+        เช็คอิน - เช็คเอาท์
+        @if (nights() > 0) {
+          <span class="nights">{{ nights() }} คืน</span>
+        }
+      </legend>
+      <div class="dates">
+        <label class="visually-hidden" for="check-in">วันเช็คอิน</label>
+        <input
+          id="check-in"
+          type="date"
+          class="field__control"
+          [attr.min]="today"
+          [formField]="searchForm.checkIn"
+          [attr.aria-invalid]="checkInError ? 'true' : null"
+          [attr.aria-describedby]="checkInError ? 'check-in-error' : null"
+        />
+        <span aria-hidden="true">—</span>
+        <label class="visually-hidden" for="check-out">วันเช็คเอาท์</label>
+        <input
+          id="check-out"
+          type="date"
+          class="field__control"
+          [attr.min]="model().checkIn"
+          [formField]="searchForm.checkOut"
+          [attr.aria-invalid]="checkOutError ? 'true' : null"
+          [attr.aria-describedby]="checkOutError ? 'check-out-error' : null"
+        />
+      </div>
+      @if (checkInError) {
+        <p id="check-in-error" class="field__error">{{ checkInError }}</p>
+      }
+      @if (checkOutError) {
+        <p id="check-out-error" class="field__error">{{ checkOutError }}</p>
+      }
+    </fieldset>
+  </div>
+
+  <div
+    #guestsContainer
+    class="field field--guests"
+    [class.field--invalid]="guestsInvalid()"
+    (focusout)="onGuestsFocusOut($event, guestsContainer)"
+    (keydown.escape)="closeGuests(true)"
+  >
+    <span class="field__icon material-symbols-outlined" aria-hidden="true">group</span>
+    <div class="field__body">
+      <span class="field__label" id="guests-label">ผู้เข้าพักและห้องพัก</span>
+      <button
+        #guestsToggle
+        type="button"
+        class="field__control guests-toggle"
+        aria-controls="guests-panel"
+        aria-describedby="guests-label"
+        [attr.aria-expanded]="guestsOpen()"
+        (click)="toggleGuests()"
+      >
+        {{ model().adults }} ผู้ใหญ่, {{ model().children }} เด็ก • {{ model().rooms }} ห้อง
+      </button>
+      @if (adultsError || childrenError) {
+        <p class="field__error">{{ adultsError ?? childrenError }}</p>
+      }
+      @if (roomsError) {
+        <p class="field__error">{{ roomsError }}</p>
+      }
+    </div>
+
+    <div id="guests-panel" class="guests-panel" role="group" aria-labelledby="guests-label" [hidden]="!guestsOpen()">
+      <label class="guests-panel__row" for="adults">
+        <span>ผู้ใหญ่</span>
+        <input id="adults" type="number" inputmode="numeric" step="1" [formField]="searchForm.adults" />
+      </label>
+      <label class="guests-panel__row" for="children">
+        <span>เด็ก</span>
+        <input id="children" type="number" inputmode="numeric" step="1" [formField]="searchForm.children" />
+      </label>
+      <label class="guests-panel__row" for="rooms">
+        <span>จำนวนห้อง</span>
+        <input id="rooms" type="number" inputmode="numeric" step="1" [formField]="searchForm.rooms" />
+      </label>
+      <button type="button" class="guests-panel__done" (click)="closeGuests(true)">เสร็จสิ้น</button>
+    </div>
+  </div>
+
+  <button type="submit" class="submit" aria-label="ค้นหาห้องว่าง">
+    <span class="material-symbols-outlined" aria-hidden="true">search</span>
+    <span class="submit__text" aria-hidden="true">ค้นหาห้องว่าง</span>
+  </button>
+</form>

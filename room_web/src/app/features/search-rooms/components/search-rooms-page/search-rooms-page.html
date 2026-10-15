@@ -1,0 +1,53 @@
+<div class="search-strip page-container">
+  <app-search-bar [criteria]="store.criteria()" (search)="store.search($event)" />
+</div>
+
+<div class="content page-container">
+  <div class="context">
+    <div class="context__text">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li><a routerLink="/search">หน้าแรก</a></li>
+          <li>{{ store.destination().shortName }}</li>
+          <li aria-current="page">เลือกห้องพักและวิลล่า</li>
+        </ol>
+      </nav>
+      <h1 class="context__title">ห้องพักว่างที่พร้อมต้อนรับคุณ</h1>
+      <p class="context__subtitle">เลือกดื่มด่ำกับห้องพักและพูลวิลล่าสุดเอ็กซ์คลูซีฟ พร้อมสิทธิพิเศษเฉพาะการจองตรง</p>
+    </div>
+    <app-sort-bar [(sortOrder)]="store.sortOrder" />
+  </div>
+
+  <div class="layout">
+    <aside class="layout__aside" aria-label="ตัวกรองและข้อมูลรีสอร์ต">
+      <app-filter-panel
+        [(filters)]="store.filters"
+        [rooms]="store.availableRooms()"
+        [roomTypeCounts]="store.roomTypeCounts()"
+      >
+        <app-resort-map [destination]="store.destination()" />
+      </app-filter-panel>
+      <app-best-rate-card />
+    </aside>
+
+    <app-room-list
+      class="layout__main"
+      [rooms]="store.visibleRooms()"
+      [status]="store.status()"
+      [errorMessage]="store.errorMessage()"
+      [nights]="store.nights()"
+      [checkIn]="store.criteria().checkIn"
+      (retry)="store.retry()"
+      (clearFilters)="store.resetFilters()"
+      (selectRoom)="store.selectRoom($event)"
+    />
+  </div>
+
+  <app-trust-banner class="trust" />
+
+  <p class="visually-hidden" aria-live="polite">
+    @if (store.selectedRoom(); as room) {
+      เลือกห้อง {{ room.name }} แล้ว
+    }
+  </p>
+</div>

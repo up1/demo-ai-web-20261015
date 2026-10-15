@@ -1,0 +1,35 @@
+<header class="header">
+  <div class="header__inner page-container">
+    <div class="header__left">
+      <a class="brand" routerLink="/search" aria-label="Serene Haven Hotels & Resorts หน้าแรก">
+        <span class="brand__name">SERENE HAVEN</span>
+        <span class="brand__tagline">Hotels &amp; Resorts</span>
+      </a>
+      <nav class="nav" aria-label="เมนูหลัก">
+        @for (item of navItems; track item.path) {
+          <a
+            class="nav__link"
+            [routerLink]="item.path"
+            routerLinkActive="nav__link--active"
+            ariaCurrentWhenActive="page"
+          >
+            {{ item.label }}
+          </a>
+        }
+      </nav>
+    </div>
+    <div class="header__right">
+      <div class="concierge">
+        <span class="material-symbols-outlined" aria-hidden="true">call</span>
+        <div class="concierge__text">
+          <span class="concierge__label">Concierge Desk</span>
+          <a class="concierge__phone" href="tel:021234567">02-123-4567</a>
+        </div>
+      </div>
+      <span class="divider" aria-hidden="true"></span>
+      <button type="button" class="avatar" aria-label="บัญชีผู้ใช้">
+        <span class="material-symbols-outlined" aria-hidden="true">person</span>
+      </button>
+    </div>
+  </div>
+</header>

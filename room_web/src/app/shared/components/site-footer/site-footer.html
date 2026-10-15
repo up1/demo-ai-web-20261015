@@ -1,0 +1,64 @@
+<footer class="footer">
+  <div class="footer__inner page-container">
+    <div class="footer__grid">
+      <div class="footer__col">
+        <div class="brand">
+          <span class="brand__name">SERENE HAVEN</span>
+          <span class="brand__tagline">Hotels &amp; Resorts</span>
+        </div>
+        <p class="text-sm">
+          สุนทรียภาพแห่งการพักผ่อนเหนือระดับ ผสานความสงบนิ่งของธรรมชาติและการบริการระดับเวิลด์คลาสเพื่อประสบการณ์ที่คุณจะประทับใจไม่รู้ลืม
+        </p>
+        <span class="member-badge">
+          <span class="material-symbols-outlined" aria-hidden="true">verified</span>
+          สมาชิกสมาคมโรงแรมไทย
+        </span>
+      </div>
+
+      <div class="footer__col">
+        <h2 class="footer__heading">สาขาและที่ตั้งรีสอร์ท</h2>
+        @for (branch of branches; track branch.name) {
+          <div class="branch">
+            <p class="branch__name">{{ branch.name }}</p>
+            <p class="text-sm">{{ branch.address }}</p>
+          </div>
+        }
+      </div>
+
+      <div class="footer__col">
+        <h2 class="footer__heading">ข้อมูลและการบริการ</h2>
+        <ul class="footer__list text-sm">
+          @for (service of services; track service) {
+            <li>{{ service }}</li>
+          }
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h2 class="footer__heading">ระบบชำระเงินปลอดภัยสูง</h2>
+        <p class="text-sm">มาตรฐานความปลอดภัยระดับสากล เข้ารหัสด้วยเทคโนโลยี 256-bit SSL ทุกธุรกรรม</p>
+        <ul class="payments">
+          @for (payment of payments; track payment.label) {
+            <li class="payments__item">
+              <span class="material-symbols-outlined" aria-hidden="true">{{ payment.icon }}</span>
+              {{ payment.label }}
+            </li>
+          }
+        </ul>
+        <div>
+          <p class="care-label">Customer Care 24/7</p>
+          <a class="care-email" href="mailto:support@serenehavenresorts.com">support&#64;serenehavenresorts.com</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom text-sm">
+      <span>© 2025 Serene Haven Hotels &amp; Resorts Co., Ltd. สงวนลิขสิทธิ์ทุกประการ</span>
+      <ul class="legal">
+        <li>เงื่อนไขการให้บริการ</li>
+        <li>นโยบายความเป็นส่วนตัว</li>
+        <li>คุกกี้</li>
+      </ul>
+    </div>
+  </div>
+</footer>

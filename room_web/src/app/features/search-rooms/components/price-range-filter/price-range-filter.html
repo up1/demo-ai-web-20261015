@@ -1,0 +1,39 @@
+<fieldset class="group">
+  <legend class="title">งบประมาณต่อคืน</legend>
+  <p class="display" aria-live="polite">
+    ฿{{ filters().minPrice | number }} - ฿{{ filters().maxPrice | number }}{{ isMaxOpenEnded() ? '+' : '' }}
+  </p>
+  <div class="histogram" aria-hidden="true">
+    @for (bucket of histogram(); track $index) {
+      <span class="histogram__bar" [class.histogram__bar--active]="bucket.inRange" [style.height.%]="bucket.heightPercent"></span>
+    }
+  </div>
+  <div class="range">
+    <label class="visually-hidden" for="min-price">ราคาต่ำสุดต่อคืน (บาท)</label>
+    <input
+      id="min-price"
+      type="range"
+      [step]="limits.step"
+      [formField]="minPrice()"
+      [attr.aria-valuetext]="'฿' + (filters().minPrice | number)"
+    />
+    <label class="visually-hidden" for="max-price">ราคาสูงสุดต่อคืน (บาท)</label>
+    <input
+      id="max-price"
+      type="range"
+      [step]="limits.step"
+      [formField]="maxPrice()"
+      [attr.aria-valuetext]="'฿' + (filters().maxPrice | number)"
+      [attr.aria-invalid]="error() ? 'true' : null"
+      [attr.aria-describedby]="error() ? 'price-error' : null"
+    />
+  </div>
+  <div class="scale" aria-hidden="true">
+    <span>฿{{ limits.min | number }}</span>
+    <span>฿8,000</span>
+    <span>฿{{ limits.max | number }}+</span>
+  </div>
+  @if (error()) {
+    <p id="price-error" class="error" role="alert">{{ error() }}</p>
+  }
+</fieldset>

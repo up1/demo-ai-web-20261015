@@ -1,0 +1,66 @@
+@let current = room();
+
+<article class="card" [class.card--signature]="current.signature" [attr.aria-labelledby]="titleId()">
+  @if (current.signature) {
+    <span class="ribbon">Signature Collection</span>
+  }
+
+  <app-room-media class="media" [room]="current" [priority]="priority()" />
+
+  <div class="info">
+    <div class="info__head">
+      <div class="info__meta">
+        <span class="category" [class.category--accent]="current.signature">{{ current.category }}</span>
+        @if (isLowInventory()) {
+          <span class="inventory">
+            <span class="inventory__dot" aria-hidden="true"></span>
+            เหลือเพียง {{ current.availableRooms }} ห้องสุดท้าย
+          </span>
+        } @else if (current.memberPerk) {
+          <span class="perk">{{ current.memberPerk }}</span>
+        }
+      </div>
+      <h3 class="info__title" [id]="titleId()">{{ current.name }}</h3>
+      <p class="rating">
+        <span class="material-symbols-outlined" aria-hidden="true">star</span>
+        <span>{{ current.rating | number: '1.1-1' }}</span>
+        <span class="visually-hidden">คะแนนจาก 5</span>
+        <span class="rating__reviews">({{ current.reviewCount | number }} รีวิว)</span>
+      </p>
+      <ul class="specs">
+        @for (spec of current.specs; track spec.label) {
+          <li class="specs__item">
+            <span class="material-symbols-outlined" aria-hidden="true">{{ spec.icon }}</span>
+            {{ spec.label }}
+          </li>
+        }
+      </ul>
+    </div>
+
+    <ul class="features">
+      @for (feature of current.features; track feature.label) {
+        <li
+          class="feature"
+          [class.feature--highlight]="feature.tone === FeatureTone.Highlight"
+          [class.feature--positive]="feature.tone === FeatureTone.Positive"
+        >
+          <span class="material-symbols-outlined" aria-hidden="true">{{ feature.icon }}</span>
+          {{ feature.label }}
+        </li>
+      }
+      @if (current.freeCancellation) {
+        <li class="feature feature--positive">
+          <span class="material-symbols-outlined" aria-hidden="true">verified</span>
+          ยกเลิกฟรีก่อนวันที่ {{ cancelBy() | date: 'd MMM' }}
+        </li>
+      }
+    </ul>
+
+    <app-room-pricing
+      [room]="current"
+      [nights]="nights()"
+      [describedBy]="titleId()"
+      (selectRoom)="selectRoom.emit(current)"
+    />
+  </div>
+</article>

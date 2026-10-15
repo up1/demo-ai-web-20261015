@@ -1,0 +1,83 @@
+@use 'typography' as type;
+
+:host {
+  display: block;
+}
+
+.group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.title {
+  @include type.title-md;
+  padding: 0;
+  margin-bottom: var(--space-sm);
+}
+
+.display {
+  @include type.title-md;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: var(--color-secondary);
+  font-weight: 700;
+}
+
+.histogram {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-xs);
+  height: 3rem;
+  padding: var(--space-sm) var(--space-xs) 0;
+
+  &__bar {
+    flex: 1;
+    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+    background: var(--color-surface-high);
+
+    &--active {
+      background: var(--color-primary);
+    }
+  }
+}
+
+.range {
+  position: relative;
+  height: 1.25rem;
+
+  input {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    margin: 0;
+    background: none;
+    accent-color: var(--color-primary);
+    pointer-events: none;
+
+    &::-webkit-slider-thumb {
+      pointer-events: auto;
+    }
+
+    &::-moz-range-thumb {
+      pointer-events: auto;
+    }
+  }
+}
+
+.scale {
+  @include type.label-sm;
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-muted);
+}
+
+.error {
+  @include type.body-sm;
+  color: var(--color-error);
+}

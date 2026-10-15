@@ -1,0 +1,48 @@
+<section class="list" aria-labelledby="results-title" [attr.aria-busy]="status() === SearchStatus.Loading">
+  <h2 id="results-title" class="visually-hidden">รายการห้องพักว่าง</h2>
+  <p class="visually-hidden" aria-live="polite">
+    @switch (status()) {
+      @case (SearchStatus.Loading) {
+        กำลังค้นหาห้องพัก
+      }
+      @case (SearchStatus.Success) {
+        พบห้องพักว่าง {{ rooms().length }} รายการ
+      }
+    }
+  </p>
+
+  @switch (status()) {
+    @case (SearchStatus.Loading) {
+      @for (item of skeletons; track item) {
+        <div class="skeleton" aria-hidden="true"></div>
+      }
+    }
+    @case (SearchStatus.Error) {
+      <div class="state state--error" role="alert">
+        <span class="material-symbols-outlined" aria-hidden="true">cloud_off</span>
+        <p class="state__title">{{ errorMessage() }}</p>
+        <button type="button" class="state__action" (click)="retry.emit()">ลองใหม่อีกครั้ง</button>
+      </div>
+    }
+    @default {
+      @for (room of rooms(); track room.id; let first = $first) {
+        <app-room-card
+          [room]="room"
+          [nights]="nights()"
+          [checkIn]="checkIn()"
+          [priority]="first"
+          (selectRoom)="selectRoom.emit($event)"
+        />
+      } @empty {
+        @if (status() === SearchStatus.Success) {
+          <div class="state">
+            <span class="material-symbols-outlined" aria-hidden="true">search_off</span>
+            <p class="state__title">ไม่พบห้องพักที่ตรงกับเงื่อนไขของคุณ</p>
+            <p class="state__text">ลองปรับตัวกรองหรือเปลี่ยนวันเข้าพัก</p>
+            <button type="button" class="state__action" (click)="clearFilters.emit()">ล้างตัวกรองทั้งหมด</button>
+          </div>
+        }
+      }
+    }
+  }
+</section>

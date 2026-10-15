@@ -1,0 +1,73 @@
+$font-display: 'Playfair Display', 'Noto Serif Thai', serif;
+$font-body: 'Plus Jakarta Sans', 'Noto Sans Thai', system-ui, sans-serif;
+
+@mixin headline-lg {
+  font-family: $font-display;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 48px;
+  letter-spacing: -0.01em;
+}
+
+@mixin headline-sm {
+  font-family: $font-display;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+@mixin title-lg {
+  font-family: $font-body;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 26px;
+}
+
+@mixin title-md {
+  font-family: $font-body;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+@mixin body-md {
+  font-family: $font-body;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+@mixin body-sm {
+  font-family: $font-body;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+@mixin label-md {
+  font-family: $font-body;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: 0.04em;
+}
+
+@mixin label-sm {
+  font-family: $font-body;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.06em;
+}
+
+@mixin desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin tablet-up {
+  @media (min-width: 768px) {
+    @content;
+  }
+}

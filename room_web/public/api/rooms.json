@@ -1,0 +1,568 @@
+{
+  "rooms": [
+    {
+      "id": "phk-deluxe-ocean",
+      "destinationId": "phuket",
+      "name": "Deluxe Ocean Panorama",
+      "category": "ห้องพักประเภทพรีเมียม",
+      "roomType": "deluxe",
+      "bedType": "king",
+      "maxGuests": 2,
+      "availableRooms": 3,
+      "pricePerNight": 3850,
+      "priceLabel": "ราคาต่อคืน",
+      "freeCancellation": true,
+      "rating": 4.7,
+      "reviewCount": 412,
+      "popularity": 98,
+      "amenities": [
+        "wifi",
+        "tv",
+        "fridge",
+        "air-conditioner"
+      ],
+      "specs": [
+        {
+          "icon": "bed",
+          "label": "เตียง King Size"
+        },
+        {
+          "icon": "square_foot",
+          "label": "42 ตร.ม."
+        },
+        {
+          "icon": "visibility",
+          "label": "วิวทะเล 180 องศา"
+        },
+        {
+          "icon": "balcony",
+          "label": "ระเบียง"
+        }
+      ],
+      "features": [
+        {
+          "icon": "check_circle",
+          "label": "อาหารเช้าบุฟเฟต์นานาชาติ 2 ท่าน"
+        },
+        {
+          "icon": "hot_tub",
+          "label": "อ่างจากุซซี่"
+        },
+        {
+          "icon": "local_bar",
+          "label": "มินิบาร์ฟรี"
+        }
+      ],
+      "image": {
+        "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuDnkkuFurwHblrNB14sX5x4ejDDhgfkSLr_60uqoWWqpJ0ofb5U1NyCoLDYpzPWlkh5oeO2IrqnUFQTK7oipP0zMM7TPGobBt9V3Y_90qdVaXix2ZWjKtBz0pmQyyCNeHV3XqIgEAGlkjTEHtd7FxqLS_XbSu8ug0WaNgQYEzCEjApxoHi4BIyNSHWQSGTZ-AG2_wq7kKKSQ20ME-eumb0lqzjwjOe3kTmNq8b2XoK9",
+        "alt": "ห้องนอนริมทะเลพร้อมประตูกระจกบานใหญ่ มองเห็นทะเลอันดามันสีฟ้าคราม",
+        "count": 8
+      },
+      "badge": {
+        "icon": "star",
+        "label": "แนะนำยอดนิยม",
+        "tone": "dark"
+      }
+    },
+    {
+      "id": "phk-pool-villa",
+      "destinationId": "phuket",
+      "name": "Private Pool Villa Sanctuary",
+      "category": "พูลวิลล่าส่วนตัวระดับอัลตร้าลักชูรี",
+      "roomType": "pool-villa",
+      "bedType": "king",
+      "maxGuests": 4,
+      "availableRooms": 2,
+      "pricePerNight": 8900,
+      "priceLabel": "ราคาพิเศษรวมแพ็กเกจ",
+      "freeCancellation": false,
+      "rating": 4.9,
+      "reviewCount": 188,
+      "popularity": 92,
+      "amenities": [
+        "wifi",
+        "tv",
+        "fridge",
+        "air-conditioner"
+      ],
+      "specs": [
+        {
+          "icon": "pool",
+          "label": "สระส่วนตัว 21 ตร.ม."
+        },
+        {
+          "icon": "square_foot",
+          "label": "120 ตร.ม. รวมสวน"
+        },
+        {
+          "icon": "room_service",
+          "label": "บัตเลอร์ส่วนตัว 24 ชม."
+        }
+      ],
+      "features": [
+        {
+          "icon": "breakfast_dining",
+          "label": "ฟรี Floating Breakfast ในสระ",
+          "tone": "highlight"
+        },
+        {
+          "icon": "wine_bar",
+          "label": "เซ็ตไวน์พรีเมียมต้อนรับ"
+        },
+        {
+          "icon": "airport_shuttle",
+          "label": "รถรับส่งสนามบิน VIP ไป-กลับ"
+        },
+        {
+          "icon": "spa",
+          "label": "เครดิตสปา ฿1,500",
+          "tone": "positive"
+        }
+      ],
+      "image": {
+        "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuDxX19j4aZuDH6qDeWLYER59Ohh51phEkOs5YZ0HIYel_ataOq6bUptx02K8my1ynG9s8-JItEeLGgbujgzSCoZwHwxoZOXYxpPmrhM630NZcJ_3QlppfDRxKvk65Y8nGUrn18yzGLN4PsZP1uF4m8ynTZfvUGY60dkP8XEAF6SW-XyjvE2PN2eYlErZiLjHPHtTcHl0S6D5q0n0xh0d3giNoK4n6T0xmVGSFpoMF49",
+        "alt": "พูลวิลล่าส่วนตัวพร้อมสระอินฟินิตี้มองเห็นหน้าผาและทะเลยามพระอาทิตย์ตก",
+        "count": 12
+      },
+      "badge": {
+        "icon": "pool",
+        "label": "สระส่วนตัว 7x3 ม.",
+        "tone": "light"
+      },
+      "signature": true
+    },
+    {
+      "id": "phk-superior-garden",
+      "destinationId": "phuket",
+      "name": "Superior King Botanical Garden",
+      "category": "ห้องพักโซนธรรมชาติ",
+      "roomType": "superior",
+      "bedType": "king",
+      "maxGuests": 2,
+      "availableRooms": 6,
+      "pricePerNight": 2450,
+      "originalPrice": 3100,
+      "priceLabel": "ราคาต่อคืน",
+      "freeCancellation": true,
+      "rating": 4.5,
+      "reviewCount": 530,
+      "popularity": 85,
+      "amenities": [
+        "wifi",
+        "tv",
+        "air-conditioner"
+      ],
+      "specs": [
+        {
+          "icon": "bed",
+          "label": "เตียง King Size"
+        },
+        {
+          "icon": "square_foot",
+          "label": "36 ตร.ม."
+        },
+        {
+          "icon": "yard",
+          "label": "วิวสวนพฤกษศาสตร์"
+        }
+      ],
+      "features": [
+        {
+          "icon": "deck",
+          "label": "ชานระเบียงชมสวน"
+        },
+        {
+          "icon": "coffee",
+          "label": "เครื่องชงกาแฟแคปซูล"
+        },
+        {
+          "icon": "schedule",
+          "label": "เช็คอินล่วงหน้าได้ตั้งแต่ 12:00 น."
+        },
+        {
+          "icon": "wifi",
+          "label": "ฟรี High-Speed Wi-Fi"
+        }
+      ],
+      "image": {
+        "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuBZQ3igTgfm2gxx8VQxOxnTVe5Y-PJALmT-shZwo4wxwMlunHjSayCqAysWmUPsV9Z9qG12UQG4pGJtM_gy-xAA00WrVW_Ke1EcJJX5zx8c0PEzC5dtTmePGcLgRWsqhw4YdHWodmvKzduxtW31ivq-F3p_GBY5qybFlErc7sbROSue5_8VplYcCCEhNBW74LAiv53UTWKfy7E9BwFmIqbous5bPqszteoEXU0uYj-u",
+        "alt": "ห้องพักโทนไม้อบอุ่น มองเห็นสวนพฤกษศาสตร์และต้นปาล์ม",
+        "count": 6
+      },
+      "badge": {
+        "icon": "savings",
+        "label": "ราคาสุดคุ้มค่า",
+        "tone": "light"
+      },
+      "memberPerk": "สิทธิประโยชน์สมาชิก"
+    },
+    {
+      "id": "phk-superior-twin",
+      "destinationId": "phuket",
+      "name": "Superior Twin Courtyard",
+      "category": "ห้องพักโซนธรรมชาติ",
+      "roomType": "superior",
+      "bedType": "twin",
+      "maxGuests": 2,
+      "availableRooms": 5,
+      "pricePerNight": 1900,
+      "priceLabel": "ราคาต่อคืน",
+      "freeCancellation": true,
+      "rating": 4.2,
+      "reviewCount": 264,
+      "popularity": 70,
+      "amenities": [
+        "wifi",
+        "tv",
+        "air-conditioner"
+      ],
+      "specs": [
+        {
+          "icon": "bed",
+          "label": "เตียงคู่ 2 เตียง"
+        },
+        {
+          "icon": "square_foot",
+          "label": "32 ตร.ม."
+        },
+        {
+          "icon": "yard",
+          "label": "วิวคอร์ทยาร์ด"
+        }
+      ],
+      "features": [
+        {
+          "icon": "coffee",
+          "label": "ชา-กาแฟฟรี"
+        },
+        {
+          "icon": "wifi",
+          "label": "ฟรี High-Speed Wi-Fi"
+        }
+      ],
+      "image": {
+        "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuBZQ3igTgfm2gxx8VQxOxnTVe5Y-PJALmT-shZwo4wxwMlunHjSayCqAysWmUPsV9Z9qG12UQG4pGJtM_gy-xAA00WrVW_Ke1EcJJX5zx8c0PEzC5dtTmePGcLgRWsqhw4YdHWodmvKzduxtW31ivq-F3p_GBY5qybFlErc7sbROSue5_8VplYcCCEhNBW74LAiv53UTWKfy7E9BwFmIqbous5bPqszteoEXU0uYj-u",
+        "alt": "ห้องพักโทนไม้อบอุ่น มองเห็นสวนพฤกษศาสตร์และต้นปาล์ม",
+        "count": 5
+      }
+    },
+    {
+      "id": "phk-grand-suite",
+      "destinationId": "phuket",
+      "name": "Grand Executive Suite",
+      "category": "สวีทระดับผู้บริหาร",
+      "roomType": "grand",
+      "bedType": "king",
+      "maxGuests": 3,
+      "availableRooms": 1,
+      "pricePerNight": 12500,
+      "priceLabel": "ราคาต่อคืน",
+      "freeCancellation": true,
+      "rating": 4.8,
+      "reviewCount": 96,
+      "popularity": 76,
+      "amenities": [
+        "wifi",
+        "tv",
+        "fridge",
+        "air-conditioner"
+      ],
+      "specs": [
+        {
+          "icon": "bed",
+          "label": "เตียง King Size"
+        },
+        {
+          "icon": "square_foot",
+          "label": "85 ตร.ม."
+        },
+        {
+          "icon": "visibility",
+          "label": "วิวทะเลพาโนรามา"
+        }
+      ],
+      "features": [
+        {
+          "icon": "local_bar",
+          "label": "Executive Lounge"
+        },
+        {
+          "icon": "check_circle",
+          "label": "อาหารเช้าในห้อง"
+        },
+        {
+          "icon": "spa",
+          "label": "เครดิตสปา ฿2,000",
+          "tone": "positive"
+        }
+      ],
+      "image": {
+        "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuDnkkuFurwHblrNB14sX5x4ejDDhgfkSLr_60uqoWWqpJ0ofb5U1NyCoLDYpzPWlkh5oeO2IrqnUFQTK7oipP0zMM7TPGobBt9V3Y_90qdVaXix2ZWjKtBz0pmQyyCNeHV3XqIgEAGlkjTEHtd7FxqLS_XbSu8ug0WaNgQYEzCEjApxoHi4BIyNSHWQSGTZ-AG2_wq7kKKSQ20ME-eumb0lqzjwjOe3kTmNq8b2XoK9",
+        "alt": "ห้องนอนริมทะเลพร้อมประตูกระจกบานใหญ่ มองเห็นทะเลอันดามันสีฟ้าคราม",
+        "count": 10
+      }
+    },
+    {
+      "id": "phk-deluxe-single",
+      "destinationId": "phuket",
+      "name": "Deluxe Solo Retreat",
+      "category": "ห้องพักสำหรับนักเดินทางเดี่ยว",
+      "roomType": "deluxe",
+      "bedType": "single",
+      "maxGuests": 1,
+      "availableRooms": 4,
+      "pricePerNight": 1650,
+      "priceLabel": "ราคาต่อคืน",
+      "freeCancellation": false,
+      "rating": 4.1,
+      "reviewCount": 77,
+      "popularity": 55,
+      "amenities": [
+        "wifi",
+        "air-conditioner"
+      ],
+      "specs": [
+        {
+          "icon": "bed",
+          "label": "เตียงเดี่ยว"
+        },
+        {
+          "icon": "square_foot",
+          "label": "22 ตร.ม."
+        }
+      ],
+      "features": [
+        {
+          "icon": "wifi",
+          "label": "ฟรี High-Speed Wi-Fi"
+        },
+        {
+          "icon": "coffee",
+          "label": "ชา-กาแฟฟรี"
+        }
+      ],
+      "image": {
+        "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuBZQ3igTgfm2gxx8VQxOxnTVe5Y-PJALmT-shZwo4wxwMlunHjSayCqAysWmUPsV9Z9qG12UQG4pGJtM_gy-xAA00WrVW_Ke1EcJJX5zx8c0PEzC5dtTmePGcLgRWsqhw4YdHWodmvKzduxtW31ivq-F3p_GBY5qybFlErc7sbROSue5_8VplYcCCEhNBW74LAiv53UTWKfy7E9BwFmIqbous5bPqszteoEXU0uYj-u",
+        "alt": "ห้องพักโทนไม้อบอุ่น มองเห็นสวนพฤกษศาสตร์และต้นปาล์ม",
+        "count": 4
+      }
+    },
+    {
+      "id": "smi-pool-villa",
+      "destinationId": "samui",
+      "name": "Cliffside Infinity Pool Villa",
+      "category": "พูลวิลล่าริมหน้าผา",
+      "roomType": "pool-villa",
+      "bedType": "king",
+      "maxGuests": 4,
+      "availableRooms": 2,
+      "pricePerNight": 9800,
+      "priceLabel": "ราคาพิเศษรวมแพ็กเกจ",
+      "freeCancellation": true,
+      "rating": 4.9,
+      "reviewCount": 143,
+      "popularity": 95,
+      "amenities": [
+        "wifi",
+        "tv",
+        "fridge",
+        "air-conditioner"
+      ],
+      "specs": [
+        {
+          "icon": "pool",
+          "label": "สระอินฟินิตี้ส่วนตัว"
+        },
+        {
+          "icon": "square_foot",
+          "label": "110 ตร.ม."
+        },
+        {
+          "icon": "room_service",
+          "label": "บัตเลอร์ส่วนตัว"
+        }
+      ],
+      "features": [
+        {
+          "icon": "breakfast_dining",
+          "label": "ฟรี Floating Breakfast",
+          "tone": "highlight"
+        },
+        {
+          "icon": "airport_shuttle",
+          "label": "รถรับส่งสนามบิน"
+        }
+      ],
+      "image": {
+        "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuDxX19j4aZuDH6qDeWLYER59Ohh51phEkOs5YZ0HIYel_ataOq6bUptx02K8my1ynG9s8-JItEeLGgbujgzSCoZwHwxoZOXYxpPmrhM630NZcJ_3QlppfDRxKvk65Y8nGUrn18yzGLN4PsZP1uF4m8ynTZfvUGY60dkP8XEAF6SW-XyjvE2PN2eYlErZiLjHPHtTcHl0S6D5q0n0xh0d3giNoK4n6T0xmVGSFpoMF49",
+        "alt": "พูลวิลล่าส่วนตัวพร้อมสระอินฟินิตี้มองเห็นหน้าผาและทะเลยามพระอาทิตย์ตก",
+        "count": 9
+      },
+      "badge": {
+        "icon": "star",
+        "label": "แนะนำยอดนิยม",
+        "tone": "dark"
+      },
+      "signature": true
+    },
+    {
+      "id": "smi-deluxe-sea",
+      "destinationId": "samui",
+      "name": "Deluxe Sea View",
+      "category": "ห้องพักประเภทพรีเมียม",
+      "roomType": "deluxe",
+      "bedType": "twin",
+      "maxGuests": 3,
+      "availableRooms": 4,
+      "pricePerNight": 4200,
+      "priceLabel": "ราคาต่อคืน",
+      "freeCancellation": true,
+      "rating": 4.6,
+      "reviewCount": 221,
+      "popularity": 80,
+      "amenities": [
+        "wifi",
+        "tv",
+        "fridge",
+        "air-conditioner"
+      ],
+      "specs": [
+        {
+          "icon": "bed",
+          "label": "เตียงคู่ 2 เตียง"
+        },
+        {
+          "icon": "square_foot",
+          "label": "40 ตร.ม."
+        },
+        {
+          "icon": "visibility",
+          "label": "วิวอ่าวบ่อผุด"
+        }
+      ],
+      "features": [
+        {
+          "icon": "check_circle",
+          "label": "อาหารเช้า 2 ท่าน"
+        },
+        {
+          "icon": "balcony",
+          "label": "ระเบียงส่วนตัว"
+        }
+      ],
+      "image": {
+        "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuDnkkuFurwHblrNB14sX5x4ejDDhgfkSLr_60uqoWWqpJ0ofb5U1NyCoLDYpzPWlkh5oeO2IrqnUFQTK7oipP0zMM7TPGobBt9V3Y_90qdVaXix2ZWjKtBz0pmQyyCNeHV3XqIgEAGlkjTEHtd7FxqLS_XbSu8ug0WaNgQYEzCEjApxoHi4BIyNSHWQSGTZ-AG2_wq7kKKSQ20ME-eumb0lqzjwjOe3kTmNq8b2XoK9",
+        "alt": "ห้องนอนริมทะเลพร้อมประตูกระจกบานใหญ่ มองเห็นทะเลอันดามันสีฟ้าคราม",
+        "count": 7
+      }
+    },
+    {
+      "id": "cnx-superior",
+      "destinationId": "chiangmai",
+      "name": "Superior Rice Terrace",
+      "category": "ห้องพักโซนธรรมชาติ",
+      "roomType": "superior",
+      "bedType": "king",
+      "maxGuests": 2,
+      "availableRooms": 6,
+      "pricePerNight": 2200,
+      "priceLabel": "ราคาต่อคืน",
+      "freeCancellation": true,
+      "rating": 4.6,
+      "reviewCount": 305,
+      "popularity": 88,
+      "amenities": [
+        "wifi",
+        "tv",
+        "fridge"
+      ],
+      "specs": [
+        {
+          "icon": "bed",
+          "label": "เตียง King Size"
+        },
+        {
+          "icon": "square_foot",
+          "label": "34 ตร.ม."
+        },
+        {
+          "icon": "yard",
+          "label": "วิวนาขั้นบันได"
+        }
+      ],
+      "features": [
+        {
+          "icon": "coffee",
+          "label": "กาแฟดอยช้าง"
+        },
+        {
+          "icon": "wifi",
+          "label": "ฟรี High-Speed Wi-Fi"
+        }
+      ],
+      "image": {
+        "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuBZQ3igTgfm2gxx8VQxOxnTVe5Y-PJALmT-shZwo4wxwMlunHjSayCqAysWmUPsV9Z9qG12UQG4pGJtM_gy-xAA00WrVW_Ke1EcJJX5zx8c0PEzC5dtTmePGcLgRWsqhw4YdHWodmvKzduxtW31ivq-F3p_GBY5qybFlErc7sbROSue5_8VplYcCCEhNBW74LAiv53UTWKfy7E9BwFmIqbous5bPqszteoEXU0uYj-u",
+        "alt": "ห้องพักโทนไม้อบอุ่น มองเห็นสวนพฤกษศาสตร์และต้นปาล์ม",
+        "count": 6
+      },
+      "badge": {
+        "icon": "savings",
+        "label": "ราคาสุดคุ้มค่า",
+        "tone": "light"
+      }
+    },
+    {
+      "id": "cnx-grand",
+      "destinationId": "chiangmai",
+      "name": "Grand Lanna Residence",
+      "category": "เรสซิเดนซ์สไตล์ล้านนา",
+      "roomType": "grand",
+      "bedType": "king",
+      "maxGuests": 4,
+      "availableRooms": 1,
+      "pricePerNight": 7600,
+      "priceLabel": "ราคาต่อคืน",
+      "freeCancellation": false,
+      "rating": 4.8,
+      "reviewCount": 64,
+      "popularity": 72,
+      "amenities": [
+        "wifi",
+        "tv",
+        "fridge",
+        "air-conditioner"
+      ],
+      "specs": [
+        {
+          "icon": "bed",
+          "label": "เตียง King Size"
+        },
+        {
+          "icon": "square_foot",
+          "label": "95 ตร.ม."
+        },
+        {
+          "icon": "yard",
+          "label": "สวนส่วนตัว"
+        }
+      ],
+      "features": [
+        {
+          "icon": "spa",
+          "label": "เครดิตสปา ฿1,000",
+          "tone": "positive"
+        },
+        {
+          "icon": "local_bar",
+          "label": "มินิบาร์ฟรี"
+        }
+      ],
+      "image": {
+        "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuDxX19j4aZuDH6qDeWLYER59Ohh51phEkOs5YZ0HIYel_ataOq6bUptx02K8my1ynG9s8-JItEeLGgbujgzSCoZwHwxoZOXYxpPmrhM630NZcJ_3QlppfDRxKvk65Y8nGUrn18yzGLN4PsZP1uF4m8ynTZfvUGY60dkP8XEAF6SW-XyjvE2PN2eYlErZiLjHPHtTcHl0S6D5q0n0xh0d3giNoK4n6T0xmVGSFpoMF49",
+        "alt": "พูลวิลล่าส่วนตัวพร้อมสระอินฟินิตี้มองเห็นหน้าผาและทะเลยามพระอาทิตย์ตก",
+        "count": 8
+      },
+      "memberPerk": "สิทธิประโยชน์สมาชิก"
+    }
+  ]
+}

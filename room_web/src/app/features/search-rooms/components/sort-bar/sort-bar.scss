@@ -1,0 +1,42 @@
+@use 'typography' as type;
+
+:host {
+  display: block;
+}
+
+.sort {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 0.375rem;
+  border-radius: var(--radius-md);
+  background: var(--color-surface-low);
+
+  &__label {
+    @include type.label-sm;
+    padding-inline: var(--space-sm);
+    color: var(--color-muted);
+    text-transform: uppercase;
+  }
+
+  &__option {
+    @include type.label-md;
+    padding: 0.375rem var(--space-md);
+    border: 0;
+    border-radius: var(--radius-sm);
+    background: transparent;
+    color: var(--color-on-surface-variant);
+    transition: color 150ms ease;
+
+    &:hover {
+      color: var(--color-primary);
+    }
+
+    &--active {
+      background: var(--color-surface-lowest);
+      color: var(--color-primary);
+      box-shadow: var(--shadow-sm);
+    }
+  }
+}
