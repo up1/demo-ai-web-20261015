@@ -1,5 +1,5 @@
 <div class="search-strip page-container">
-  <app-search-bar [criteria]="store.criteria()" (search)="store.search($event)" />
+  <app-search-bar [criteria]="store.criteria()" (searchSubmit)="store.search($event)" />
 </div>
 
 <div class="content page-container">

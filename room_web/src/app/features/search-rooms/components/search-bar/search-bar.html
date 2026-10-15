@@ -71,6 +71,8 @@
   <div
     #guestsContainer
     class="field field--guests"
+    role="group"
+    aria-labelledby="guests-label"
     [class.field--invalid]="guestsInvalid()"
     (focusout)="onGuestsFocusOut($event, guestsContainer)"
     (keydown.escape)="closeGuests(true)"

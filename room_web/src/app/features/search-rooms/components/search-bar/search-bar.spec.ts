@@ -20,7 +20,7 @@ async function render(criteria: SearchCriteria) {
   const fixture = TestBed.createComponent(SearchBar);
   fixture.componentRef.setInput('criteria', criteria);
   const emitted: SearchCriteria[] = [];
-  fixture.componentInstance.search.subscribe((value) => emitted.push(value));
+  fixture.componentInstance.searchSubmit.subscribe((value) => emitted.push(value));
   await fixture.whenStable();
   return { fixture, emitted, element: fixture.nativeElement as HTMLElement };
 }

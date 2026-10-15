@@ -12,7 +12,7 @@ import { searchCriteriaSchema } from '../../utils/search-schemas';
 })
 export class SearchBar {
   readonly criteria = input.required<SearchCriteria>();
-  readonly search = output<SearchCriteria>();
+  readonly searchSubmit = output<SearchCriteria>();
 
   protected readonly today = inject(TODAY);
   protected readonly destinations = DESTINATIONS;
@@ -56,7 +56,7 @@ export class SearchBar {
   protected async onSubmit(event: Event): Promise<void> {
     event.preventDefault();
     const valid = await submit(this.searchForm, async () => {
-      this.search.emit(this.model());
+      this.searchSubmit.emit(this.model());
       return undefined;
     });
     if (!valid && this.guestsInvalid()) {
