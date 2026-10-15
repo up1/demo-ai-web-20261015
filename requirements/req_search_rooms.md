@@ -1,5 +1,8 @@
 # Feature : Search Rooms
 
+## User Interface
+* Read from file `ui-mockup/page-01.html`
+
 ## Description
 This feature allows users to search for available rooms based on their desired check-in and check-out dates, as well as room type preferences.
 
