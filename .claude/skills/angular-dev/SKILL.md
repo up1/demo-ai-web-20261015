@@ -12,6 +12,7 @@ description: Angular development skill for building and maintaining Angular appl
 6. Optimize performance and accessibility
 7. Check user interface with mockup ui
    7.1 If not matching the mockup, iterate and refine the UI until it aligns with the design
+8. Run ng lint to check for code style and potential errors with command `npm run lint` or `ng lint`, if not passing, fix the issues before proceeding
 
 ## Technology stack
 * Angular
