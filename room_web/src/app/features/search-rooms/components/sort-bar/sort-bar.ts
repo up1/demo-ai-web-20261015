@@ -4,7 +4,7 @@ import { SORT_OPTIONS, SortOrder } from '../../models/room.model';
 @Component({
   selector: 'app-sort-bar',
   template: `
-    <div class="sort" role="group" aria-labelledby="sort-label">
+    <div class="sort" data-testid="sort-order-dropdown" role="group" aria-labelledby="sort-label">
       <span id="sort-label" class="sort__label">จัดเรียงตาม:</span>
       @for (option of options; track option.value) {
         <button

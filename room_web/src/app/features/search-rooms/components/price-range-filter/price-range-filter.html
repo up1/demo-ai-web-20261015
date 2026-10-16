@@ -1,4 +1,4 @@
-<fieldset class="group">
+<fieldset class="group" data-testid="price-range-filter">
   <legend class="title">งบประมาณต่อคืน</legend>
   <p class="display" aria-live="polite">
     ฿{{ filters().minPrice | number }} - ฿{{ filters().maxPrice | number }}{{ isMaxOpenEnded() ? '+' : '' }}

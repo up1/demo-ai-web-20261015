@@ -12,6 +12,7 @@
       <label class="field__label" for="destination">จุดหมายปลายทาง / สาขา</label>
       <select
         id="destination"
+        data-testid="destination-input"
         class="field__control"
         [formField]="searchForm.destinationId"
         [attr.aria-invalid]="destinationError ? 'true' : null"
@@ -40,6 +41,7 @@
         <label class="visually-hidden" for="check-in">วันเช็คอิน</label>
         <input
           id="check-in"
+          data-testid="checkin-date-input"
           type="date"
           class="field__control"
           [attr.min]="today"
@@ -51,6 +53,7 @@
         <label class="visually-hidden" for="check-out">วันเช็คเอาท์</label>
         <input
           id="check-out"
+          data-testid="checkout-date-input"
           type="date"
           class="field__control"
           [attr.min]="model().checkIn"
@@ -84,6 +87,7 @@
         #guestsToggle
         type="button"
         class="field__control guests-toggle"
+        data-testid="guests-input"
         aria-controls="guests-panel"
         aria-describedby="guests-label"
         [attr.aria-expanded]="guestsOpen()"
@@ -102,21 +106,21 @@
     <div id="guests-panel" class="guests-panel" role="group" aria-labelledby="guests-label" [hidden]="!guestsOpen()">
       <label class="guests-panel__row" for="adults">
         <span>ผู้ใหญ่</span>
-        <input id="adults" type="number" inputmode="numeric" step="1" [formField]="searchForm.adults" />
+        <input id="adults" data-testid="adults-input" type="number" inputmode="numeric" step="1" [formField]="searchForm.adults" />
       </label>
       <label class="guests-panel__row" for="children">
         <span>เด็ก</span>
-        <input id="children" type="number" inputmode="numeric" step="1" [formField]="searchForm.children" />
+        <input id="children" data-testid="children-input" type="number" inputmode="numeric" step="1" [formField]="searchForm.children" />
       </label>
       <label class="guests-panel__row" for="rooms">
         <span>จำนวนห้อง</span>
-        <input id="rooms" type="number" inputmode="numeric" step="1" [formField]="searchForm.rooms" />
+        <input id="rooms" data-testid="rooms-input" type="number" inputmode="numeric" step="1" [formField]="searchForm.rooms" />
       </label>
       <button type="button" class="guests-panel__done" (click)="closeGuests(true)">เสร็จสิ้น</button>
     </div>
   </div>
 
-  <button type="submit" class="submit" aria-label="ค้นหาห้องว่าง">
+  <button type="submit" class="submit" data-testid="search-button" aria-label="ค้นหาห้องว่าง">
     <span class="material-symbols-outlined" aria-hidden="true">search</span>
     <span class="submit__text" aria-hidden="true">ค้นหาห้องว่าง</span>
   </button>

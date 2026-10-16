@@ -20,10 +20,10 @@
       <span class="group__title">ยกเลิกฟรี (Free Cancellation)</span>
       <span class="hint">จองล่วงหน้าโดยไม่ต้องกังวล</span>
     </span>
-    <input id="free-cancellation" type="checkbox" class="checkbox checkbox--lg" [formField]="filtersForm.freeCancellation" />
+    <input id="free-cancellation" data-testid="free-cancellation-filter" type="checkbox" class="checkbox checkbox--lg" [formField]="filtersForm.freeCancellation" />
   </label>
 
-  <fieldset class="group">
+  <fieldset class="group" data-testid="room-type-filter">
     <legend class="group__title">ประเภทห้องพัก</legend>
     <div class="options">
       @for (option of roomTypeOptions; track option.value) {
@@ -45,7 +45,7 @@
     </div>
   </fieldset>
 
-  <fieldset class="group">
+  <fieldset class="group" data-testid="bed-type-filter">
     <legend class="group__title">รูปแบบเตียง</legend>
     <div class="beds">
       <label class="bed">
@@ -66,7 +66,7 @@
     </div>
   </fieldset>
 
-  <fieldset class="group">
+  <fieldset class="group" data-testid="amenities-filter">
     <legend class="group__title">สิ่งอำนวยความสะดวกในห้อง</legend>
     <div class="chips">
       @for (option of amenityOptions; track option.value) {
