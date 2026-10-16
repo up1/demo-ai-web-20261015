@@ -1,0 +1,76 @@
+info:
+  name: search
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://localhost:8080/api/rooms/search
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "location": "Bangkok",
+        "check_in_date": "2026-12-01",
+        "check_out_date": "2026-12-05",
+        "guests": {
+          "adults": 2,
+          "children": 1,
+          "rooms": 1
+        }
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        const Ajv = require("ajv");
+
+        const ajv = new Ajv({ allErrors: true });
+
+        const schema = {
+          type: "object",
+          required: ["rooms"],
+          properties: {
+            rooms: {
+              type: "array",
+              items: {
+                type: "object",
+                required: ["id", "name", "price", "availability"],
+                properties: {
+                  id: { type: "string" },
+                  name: { type: "string" },
+                  price: { type: "integer" },
+                  availability: { type: "boolean" }
+                },
+                additionalProperties: false
+              }
+            }
+          },
+          additionalProperties: false
+        };
+
+        test("TC-API_001: should return status code 200", function () {
+          expect(res.getStatus()).to.equal(200);
+        });
+
+        test("TC-API_001: should return Content-Type application/json", function () {
+          expect(res.getHeader("content-type")).to.include("application/json");
+        });
+
+        test("TC-API_001: response body should match JSON schema", function () {
+          const validate = ajv.compile(schema);
+          const valid = validate(res.getBody());
+          expect(valid, JSON.stringify(validate.errors)).to.be.true;
+        });
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

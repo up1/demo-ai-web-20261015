@@ -3,7 +3,7 @@
 
 ## API Specification
 ### Endpoint
-* `POST /api/rooms/search`
+* `POST //api/rooms/search`
 ### Request Headers
 * `Content-Type: application/json`
 ### Request Body in JSON format
