@@ -38,6 +38,23 @@ This feature allows users to search for available rooms based on their desired c
 | Amenities | Optional, must be a list of valid amenities (Wi-Fi, ทีวี, ตู้เย็น, เครื่องปรับอากาศ) | Please select valid amenities |
 | Sort Order | Optional, must be one of the predefined sort options (popularity, price low to high, price high to low, rating or review) | Please select a valid sort order |
 
+## Web elements with test id that use in playwright
+
+| Element | Test ID |
+|---------|---------|
+| Destination/Location input | destination-input |
+| Check-in Date input | checkin-date-input |
+| Check-out Date input | checkout-date-input |
+| Number of Guests input | guests-input |
+| Number of Rooms input | rooms-input |
+| Price Range filter | price-range-filter |
+| Free Cancellation filter | free-cancellation-filter |
+| Room Type Preferences filter | room-type-filter |
+| Bed Type filter | bed-type-filter |
+| Amenities filter | amenities-filter |
+| Sort Order dropdown | sort-order-dropdown |
+| Search button | search-button |
+
 ## Test cases
 
 ### Test case 001 : Search with valid inputs
