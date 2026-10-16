@@ -50,3 +50,7 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+
+# Runtime config
+.env
+/src/app/core/config/runtime-config.generated.ts

@@ -1,0 +1,85 @@
+<section class="test-page page-container" aria-labelledby="test-page-title" data-testid="test-page">
+  <header class="test-page__header">
+    <p class="test-page__eyebrow">สำหรับการทดสอบเท่านั้น</p>
+    <h1 id="test-page-title" class="test-page__title">Test Page</h1>
+    <p class="test-page__subtitle">เลือกผู้ใช้ สภาพแวดล้อม และฟีเจอร์ที่ต้องการทดสอบ</p>
+  </header>
+
+  <form class="test-page__form" (submit)="start($event)" data-testid="test-page-form">
+    <fieldset class="choice-group" data-testid="test-page-personas">
+      <legend class="choice-group__legend">1. เลือกผู้ใช้ (Persona)</legend>
+      <div class="choice-group__grid">
+        @for (persona of personas; track persona.id) {
+          <label class="choice" [class.choice--selected]="personaId() === persona.id">
+            <input
+              type="radio"
+              name="persona"
+              [value]="persona.id"
+              [checked]="personaId() === persona.id"
+              (change)="personaId.set(persona.id)"
+              [attr.data-testid]="'test-page-persona-' + persona.id"
+            />
+            <span class="choice__name">{{ persona.name }}</span>
+            <span class="choice__description">{{ persona.description }}</span>
+          </label>
+        }
+      </div>
+    </fieldset>
+
+    <fieldset class="choice-group" data-testid="test-page-environments">
+      <legend class="choice-group__legend">2. เลือกสภาพแวดล้อม (Environment)</legend>
+      <div class="choice-group__grid choice-group__grid--compact">
+        @for (environment of environments; track environment.id) {
+          <label class="choice" [class.choice--selected]="environmentId() === environment.id">
+            <input
+              type="radio"
+              name="environment"
+              [value]="environment.id"
+              [checked]="environmentId() === environment.id"
+              (change)="selectEnvironment(environment.id)"
+              [attr.data-testid]="'test-page-env-' + environment.id"
+            />
+            <span class="choice__name">{{ environment.name }}</span>
+            <span class="choice__description">{{ environment.description }}</span>
+          </label>
+        }
+      </div>
+    </fieldset>
+
+    <fieldset class="choice-group" data-testid="test-page-features">
+      <legend class="choice-group__legend">3. เลือกฟีเจอร์ (Feature)</legend>
+      <div class="choice-group__grid">
+        @for (feature of features; track feature.id) {
+          <label
+            class="choice"
+            [class.choice--selected]="featureId() === feature.id"
+            [class.choice--disabled]="!feature.available"
+          >
+            <input
+              type="radio"
+              name="feature"
+              [value]="feature.id"
+              [checked]="featureId() === feature.id"
+              [disabled]="!feature.available"
+              (change)="featureId.set(feature.id)"
+              [attr.data-testid]="'test-page-feature-' + feature.id"
+            />
+            <span class="choice__name">{{ feature.name }}</span>
+            <span class="choice__description">{{ feature.description }}</span>
+          </label>
+        }
+      </div>
+    </fieldset>
+
+    <div class="test-page__actions">
+      <button
+        type="submit"
+        class="test-page__start"
+        [disabled]="!canStart()"
+        data-testid="test-page-start"
+      >
+        เริ่มทดสอบ
+      </button>
+    </div>
+  </form>
+</section>

@@ -1,0 +1,33 @@
+@use 'typography' as type;
+
+.banner {
+  @include type.body-sm;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-sm) var(--page-margin);
+  background: var(--color-on-secondary-fixed);
+  color: var(--color-on-primary);
+
+  &__label {
+    @include type.label-sm;
+    padding: 0 var(--space-sm);
+    border-radius: var(--radius-sm);
+    background: var(--color-secondary-fixed);
+    color: var(--color-on-secondary-fixed);
+  }
+
+  &__link {
+    margin-left: auto;
+    color: var(--color-on-primary);
+  }
+
+  &__end {
+    padding: var(--space-xs) var(--space-md);
+    border: 1px solid var(--color-on-primary);
+    border-radius: var(--radius-full);
+    background: transparent;
+    color: var(--color-on-primary);
+  }
+}

@@ -18,4 +18,12 @@ export class SessionStorageService {
       return;
     }
   }
+
+  remove(key: string): void {
+    try {
+      sessionStorage.removeItem(key);
+    } catch {
+      return;
+    }
+  }
 }

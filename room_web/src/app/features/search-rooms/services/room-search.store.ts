@@ -19,7 +19,7 @@ import {
 } from '../utils/search-validation';
 import { RoomApiService, RoomSearchError } from './room-api.service';
 
-const STORAGE_KEYS = {
+export const STORAGE_KEYS = {
   criteria: 'search-rooms.criteria',
   filters: 'search-rooms.filters',
   sortOrder: 'search-rooms.sort-order',

@@ -11,7 +11,7 @@ test.describe('Search Rooms - success', () => {
     await searchRoomsPage.selectGuests({ adults: 2, children: 1, rooms: 1 });
     await searchRoomsPage.search();
 
-    await expect(searchRoomsPage.guestsToggle).toHaveText('2 ผู้ใหญ่, 1 เด็ก • 1 ห้อง');
+    await expect(searchRoomsPage.guestsInput).toHaveText('2 ผู้ใหญ่, 1 เด็ก • 1 ห้อง');
     await expect(searchRoomsPage.roomCards).toHaveCount(2);
     await expect(searchRoomsPage.roomCard('Cliffside Infinity Pool Villa')).toBeVisible();
     await expect(searchRoomsPage.roomCard('Deluxe Sea View')).toBeVisible();

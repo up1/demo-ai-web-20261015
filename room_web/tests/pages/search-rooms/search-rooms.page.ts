@@ -8,33 +8,46 @@ export interface GuestCounts {
 
 /**
  * Page object for the Search Rooms page (/search).
- * The app has no data-testid attributes, so elements are located by their stable ids and ARIA roles.
+ * Elements are located by data-testid (see requirements/req_search_rooms.md).
+ * The guests "done" button and the result list have no test id, so they use ARIA roles.
  */
 export class SearchRoomsPage {
   readonly destinationSelect: Locator;
   readonly checkInInput: Locator;
   readonly checkOutInput: Locator;
-  readonly guestsToggle: Locator;
+  readonly guestsInput: Locator;
   readonly guestsPanel: Locator;
   readonly adultsInput: Locator;
   readonly childrenInput: Locator;
   readonly roomsInput: Locator;
   readonly guestsDoneButton: Locator;
   readonly searchButton: Locator;
+  readonly priceRangeFilter: Locator;
+  readonly freeCancellationFilter: Locator;
+  readonly roomTypeFilter: Locator;
+  readonly bedTypeFilter: Locator;
+  readonly amenitiesFilter: Locator;
+  readonly sortOrderDropdown: Locator;
   readonly resultList: Locator;
   readonly roomCards: Locator;
 
   constructor(private readonly page: Page) {
-    this.destinationSelect = page.locator('#destination');
-    this.checkInInput = page.locator('#check-in');
-    this.checkOutInput = page.locator('#check-out');
-    this.guestsToggle = page.locator('button[aria-controls="guests-panel"]');
+    this.destinationSelect = page.getByTestId('destination-input');
+    this.checkInInput = page.getByTestId('checkin-date-input');
+    this.checkOutInput = page.getByTestId('checkout-date-input');
+    this.guestsInput = page.getByTestId('guests-input');
     this.guestsPanel = page.locator('#guests-panel');
-    this.adultsInput = page.locator('#adults');
-    this.childrenInput = page.locator('#children');
-    this.roomsInput = page.locator('#rooms');
+    this.adultsInput = page.getByTestId('adults-input');
+    this.childrenInput = page.getByTestId('children-input');
+    this.roomsInput = page.getByTestId('rooms-input');
     this.guestsDoneButton = this.guestsPanel.getByRole('button', { name: 'เสร็จสิ้น' });
-    this.searchButton = page.getByRole('button', { name: 'ค้นหาห้องว่าง' });
+    this.searchButton = page.getByTestId('search-button');
+    this.priceRangeFilter = page.getByTestId('price-range-filter');
+    this.freeCancellationFilter = page.getByTestId('free-cancellation-filter');
+    this.roomTypeFilter = page.getByTestId('room-type-filter');
+    this.bedTypeFilter = page.getByTestId('bed-type-filter');
+    this.amenitiesFilter = page.getByTestId('amenities-filter');
+    this.sortOrderDropdown = page.getByTestId('sort-order-dropdown');
     this.resultList = page.getByRole('region', { name: 'รายการห้องพักว่าง' });
     this.roomCards = this.resultList.getByRole('article');
   }
@@ -54,7 +67,7 @@ export class SearchRoomsPage {
   }
 
   async selectGuests({ adults, children, rooms }: GuestCounts): Promise<void> {
-    await this.guestsToggle.click();
+    await this.guestsInput.click();
     await expect(this.guestsPanel).toBeVisible();
     await this.adultsInput.fill(String(adults));
     await this.childrenInput.fill(String(children));
