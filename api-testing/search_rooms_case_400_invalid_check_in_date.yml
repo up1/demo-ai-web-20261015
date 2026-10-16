@@ -1,0 +1,48 @@
+info:
+  name: search rooms - 400 invalid check-in date
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: http://localhost:8080/api/rooms/search
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "location": "Bangkok",
+        "check_in_date": "2023-07-01",
+        "check_out_date": "2026-12-05",
+        "guests": {
+          "adults": 2,
+          "children": 1,
+          "rooms": 1
+        }
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        test("TC-API_003: should return status code 400", function () {
+          expect(res.getStatus()).to.equal(400);
+        });
+
+        test("TC-API_003: should return Content-Type application/json", function () {
+          expect(res.getHeader("content-type")).to.include("application/json");
+        });
+
+        test("TC-API_003: should return error message \"Invalid check-in date\"", function () {
+          expect(res.getBody()).to.eql({ message: "Invalid check-in date" });
+        });
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
