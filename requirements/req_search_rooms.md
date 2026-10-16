@@ -37,3 +37,14 @@ This feature allows users to search for available rooms based on their desired c
 | Bed Type | Optional, must be one of the predefined bed types (เตียงเดี่ยว, เตียงคู่, เตียงใหญ่) | Please select a valid bed type |
 | Amenities | Optional, must be a list of valid amenities (Wi-Fi, ทีวี, ตู้เย็น, เครื่องปรับอากาศ) | Please select valid amenities |
 | Sort Order | Optional, must be one of the predefined sort options (popularity, price low to high, price high to low, rating or review) | Please select a valid sort order |
+
+## Test cases
+
+### Test case 001 : Search with valid inputs
+**Steps:**
+1. Enter a valid destination/location = samui
+2. Select valid check-in and check-out dates = 2026-10-16 to 2026-10-20.
+3. Select the number of guests and rooms = 2 adults, 1 child, 1 room.
+5. Click the search button.
+**Expected Result:**
+A list of available rooms matching the criteria is displayed.
