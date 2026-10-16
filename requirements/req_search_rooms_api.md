@@ -127,8 +127,7 @@
 ## API testing :: test cases for search rooms API
 | Test Case | Description | Request Body | Expected Response |
 |-----------|-------------|--------------|----------------|
-| TC-API_001 : Valid request | Search rooms with valid parameters | `{ "location": "Bangkok", "check_in_date": "2024-07-01", "check_out_date": "2024-07-05", "guests": { "adults": 2, "children": 1, "rooms": 1 } }` | `200 OK` with list of available rooms |
+| TC-API_001 : Valid request | Search rooms with valid parameters | `{ "location": "Bangkok", "check_in_date": "2025-10-16", "check_out_date": "2025-10-20", "guests": { "adults": 2, "children": 1, "rooms": 1 } }` | `200 OK` with list of available rooms |
 | TC-API_002 : Invalid location | Search rooms with an invalid location | `{ "location": "InvalidCity", "check_in_date": "2024-07-01", "check_out_date": "2024-07-05", "guests": { "adults": 2, "children": 1, "rooms": 1 } }` | `400 Bad Request` with "Invalid location" |
-| TC-API_003 : Invalid check-in date | Search rooms with a check-in date in the past | `{ "location": "Bangkok", "check_in_date": "2023-07-01", "check_out_date": "2024-07-05", "guests": { "adults": 2, "children": 1, "rooms": 1 } }` | `400 Bad Request` with "Invalid check-in date" |
 | TC-API_003 : Invalid check-in date | Search rooms with a check-in date in the past | `{ "location": "Bangkok", "check_in_date": "2023-07-01", "check_out_date": "2024-07-05", "guests": { "adults": 2, "children": 1, "rooms": 1 } }` | `400 Bad Request` with "Invalid check-in date" |
 | TC-API_004 : Invalid check-out date | Search rooms with a check-out date before the check-in date | `{ "location": "Bangkok", "check_in_date": "2024-07-05", "check_out_date": "2024-07-01", "guests": { "adults": 2, "children": 1, "rooms": 1 } }` | `400 Bad Request` with "Invalid check-out date" |  
